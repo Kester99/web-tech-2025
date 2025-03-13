@@ -1,0 +1,46 @@
+header {
+    height: 100px;
+    display: flex;
+    border: 1px solid black;
+}
+
+header > * {
+    border: 1px solid black;
+    margin: auto;
+    padding: 7px;
+}
+
+header > h1 {
+    font-size: 28px;
+}
+
+header > a {
+    font-size: 36px;
+}
+
+header a {
+    text-decoration: none;
+}
+
+header nav {
+    border: none;
+}
+
+header ul {
+    display: flex;
+    list-style: none;
+    padding-left: 0;
+}
+
+header li a {
+    font-size: 18px;
+    margin-right: 10px;
+}
+
+header li:last-child a {
+    margin-right: auto;
+}
+
+#menu-icon {
+    display: none;
+}
