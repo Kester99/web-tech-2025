@@ -1,0 +1,60 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: white;
+    color: black; /* Change text color to black for visibility */
+}
+
+nav {
+    background-color: #333;
+    padding: 10px;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+nav ul li a:hover {
+    color:black;
+    background-color: white;
+    text-decoration: underline;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.section {
+    float:left;
+    display: flex;
+    align-items: left;
+    margin: 20px 0;
+}
+
+.section img {
+    width: 200px; /* Set a fixed width for images */
+    height: auto;
+    transition: transform 0.3s; /* Smooth transition for hover effect */
+    
+}
+
+.section img:hover {
+    transform: scale(1.1); /* Scale image on hover */
+}
+
+.section p {
+    margin-left: 20px; /* Space between image and text */
+}
