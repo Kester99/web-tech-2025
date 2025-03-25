@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Website</title>
+    <link rel="stylesheet" href="story.css">
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="webtech.html">Home</a></li>
+            <li><a href="zeusvscronuspage1.html">Z v C</a></li>
+            <li><a href="#section3">Services</a></li>
+            <li><a href="#section4">Gallery</a></li>
+            <li><a href="#section5">Contact</a></li>
+        </ul>
+    </nav>
+    <div class="story-container">
+        <button class="nav-button" id="backButton">Back</button>
+        <img src="story-image.jpg" alt="Story Image" class="story-image">
+        <div class="story-text" id="storyText"></div> <!-- New text element -->
+        <button class="nav-button" id="forwardButton">Forward</button>
+    </div>
+
+    <script>
+        // Array of image paths
+        const images = [
+            'zimage1.jpg',
+            'rheahiding.jpg',
+            'cronus.jpg',
+            'zeus&siblingsfight.jpg',
+            'zeusfighting.jpg',
+            'zeusimprisoning.jpg',
+            'zeuswin.jpg',
+            'part6.jpg',
+            'part7.jpg',
+            'part8.jpg',
+            'part9.jpg',
+            'part10.jpg',
+            'powerhungry.jpg',
+            'kratoskill.jpg',
+            'Kratosescape.jpg',
+            'zeuskratos.jpg',
+            'kratosthrone.jpg'
+          
+           
+        ];
+
+        // Array of corresponding texts
+        const texts = [
+            'Cronus, and the Titans. Cronus had swallowed his children to prevent them from overthrowing him as it was prophesied that he would die by the hands of one of his sons.',
+            'But Zeus (the sixth born) was hidden by his mother, Rhea, who gave him to nymphs and gave Zeus a rock hidden in cloth pretending it to be Zeus.',
+            'Zeus was allowed back into Olympus and with a potion forced Cronus to vomit up his trapped siblings who were trapped with him.',
+            'Zeus and his siblings, the Olympians, then rebelled against Cronus and the other Titans in a great war known as the Titanomachy.',
+            'Zeus finally won with the aid of the Hecatoncheires (hundred-handed giants) and the Cyclopes who forged Zeus\' thunderbolts.',
+            'After their victory, many of the Titans, including Cronus, were imprisoned in Tartarus, a deep pit in the Underworld',
+            'With the defeat of the Titans, Zeus and the other Olympians established their reign over the cosmos, ushering in a new era of order and civilization.',
+            'Zeus, Poseidon, and Hades drew lots to divide the cosmos. Zeus became the ruler of the sky and the heavens, Poseidon took dominion over the seas, and Hades became the lord of the Underworld.The Earth remained neutral ground, influenced by all three.',
+            'Prometheus, a Titan who sided with the Olympians, shaped humanity from clay. He later gifted them fire, defying Zeus, which led to his punishment—being chained to a rock where an eagle ate his liver daily, only for it to regenerate overnight.',
+            'Zeus and the Olympians built their celestial home on Mount Olympus, ruling over gods and mortals alike. The Olympian gods each took on domains—Hera as the queen of the gods, Athena as the goddess of wisdom, Apollo and Artemis as deities of the sun and moon, and so on.',
+            'Though the Titans were defeated, Zeus still faced opposition. The monstrous Typhon, a powerful offspring of Gaia, rose to overthrow Zeus but was ultimately vanquished and imprisoned beneath Mount Etna.',
+            'With the new Olympian order in place, the age of gods interacting with mortals began. Heroes like Perseus, Heracles, and Odysseus carried out great quests, often under the guidance or wrath of the gods.',
+            'After defeating the Titans, Zeus establishes the rule of the Olympians. However, as the gods grow more powerful, they become arrogant, using mortals as pawns in their conflicts. Kratos, a formidable Spartan warrior, pledges himself to Ares, the god of war, in exchange for power—unaware of the terrible fate awaiting him.',
+            'Tricked by Ares, Kratos slaughters his own family, becoming cursed as the Ghost of Sparta. Wracked with guilt and seeking vengeance, he defies Ares and eventually slays him, becoming the new God of War. However, Zeus, fearing Krato growing power, betrays and kills him—sending him to the Underworld.',
+            'Kratos escapes the Underworld, driven by rage. He allies with the Titans, who seek revenge against the Olympians. Together, they launch a brutal war against Mount Olympus. The once-glorious home of the gods becomes a battlefield, with Kratos slaying many Olympians, including Poseidon and Hades, further plunging the world into chaos.',
+            'After a cataclysmic battle, Kratos finally confronts Zeus. Their fight shakes the very foundations of the world, and in a moment of uncontrollable rage, Kratos brutally slays the King of the Gods. With Zeus dead and Olympus in ruins, the world plunges into darkness, as balance is lost and chaos reigns.',
+            'After realizing the destruction he has caused, Kratos is left empty. He has avenged himself, but at the cost of the world. Athena reveals that he was supposed to bring hope, not destruction. Overcome with regret, Kratos disappears, leaving behind a shattered world where the gods are dead, and humanity must struggle to survive without divine guidance.'
+
+
+        ];
+
+        let currentIndex = 0;
+
+        const storyImage = document.querySelector('.story-image');
+        const storyText = document.getElementById('storyText'); // Reference to the text element
+        const backButton = document.getElementById('backButton');
+        const forwardButton = document.getElementById('forwardButton');
+
+        // Function to update the image source and text
+        function updateContent() {
+            storyImage.src = images[currentIndex];
+            storyText.textContent = texts[currentIndex]; // Update the text
+        }
+
+        // Event listener for the Back button
+        backButton.addEventListener('click', () => {
+            currentIndex = (currentIndex > 0) ? currentIndex - 1 : images.length - 1;
+            updateContent();
+        });
+
+        // Event listener for the Forward button
+        forwardButton.addEventListener('click', () => {
+            currentIndex = (currentIndex < images.length - 1) ? currentIndex + 1 : 0;
+            updateContent();
+        });
+
+        // Initialize the first image and text
+        updateContent();
+    </script>
+</body>
+</html>

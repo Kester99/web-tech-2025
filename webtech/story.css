@@ -1,0 +1,80 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: black; /* Background color set to black */
+    color: white; /* Change text color to white for visibility */
+    display: flex;
+    flex-direction: column; /* Stack nav and story container */
+    align-items: center;
+    height: 100vh; /* Full viewport height */
+}
+
+nav {
+    background-color: #333; /* Add background color to nav */
+    width: 100%; /* Full width */
+}
+
+    nav ul {
+        list-style-type: none;
+        padding: 0;
+    }
+
+        nav ul li {
+            display: inline;
+            margin-right: 20px;
+        }
+
+            nav ul li a {
+                color: white;
+                text-decoration: none;
+            }
+
+                nav ul li a:hover {
+                    color: black;
+                    background-color: white;
+                    text-decoration: underline;
+                }
+
+.story-container {
+    position: relative; /* Position relative for absolute button positioning */
+    margin-top: 20px; /* Space between nav and story */
+    display: flex; /* Use flexbox for layout */
+    flex-direction: column; /* Stack items vertically */
+    align-items: center; /* Center items horizontally */
+    width: 100%; /* Full width */
+    max-width: 800px; /* Optional: limit the width of the container */
+}
+
+.story-image {
+    width: 1000px; /* Set the width to 1000 pixels */
+    height: 800px; /* Set the height to 800 pixels */
+}
+
+.story-text {
+    max-height: 200px; /* Set a maximum height for the text container */
+    overflow-y: auto; /* Enable vertical scrolling if text exceeds max height */
+    padding: 10px; /* Add some padding for better readability */
+    border: 1px solid #ccc; /* Optional: add a border for visual separation */
+    width: 100%; /* Full width */
+    box-sizing: border-box; /* Include padding and border in the element's total width */
+}
+
+.nav-button {
+    position: fixed; /* Fix the position of the buttons */
+    bottom: 20px; /* Distance from the bottom of the viewport */
+    background-color: #333;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+    z-index: 1;
+}
+
+#backButton {
+    left: 20px; /* Position the Back button to the left */
+}
+
+#forwardButton {
+    right: 20px; /* Position the Forward button to the right */
+}
