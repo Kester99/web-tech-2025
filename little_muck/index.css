@@ -1,7 +1,18 @@
+body {
+    margin: 0;
+    font-family: "Lexend", sans-serif;
+    font-optical-sizing: auto;
+}
+
 header {
     height: 100px;
+    width: 100%;
+    background-color: white;
     display: flex;
     border: 1px solid black;
+    position: fixed;
+    top: 0;
+    z-index: 1;
 }
 
 header > * {
@@ -43,4 +54,80 @@ header li:last-child a {
 
 #menu-icon {
     display: none;
+}
+
+main {
+    margin-top: 100px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+main > * {
+    border: 1px solid black;
+    margin: 20px;
+    min-height: 300px;
+}
+
+main > div {
+    border: none;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+    height: auto;
+    margin: auto;
+}
+
+main section {
+    flex: 2;
+}
+
+main p {
+    margin: 20px 16px;
+}
+
+main aside ol {
+    list-style: none;
+    padding: 24px 20px;
+}
+
+main aside ol a {
+    text-decoration: none;
+}
+
+.current_section {
+    font-weight: bold;
+}
+
+main img {
+    margin: auto;
+    position: sticky;
+    top: 100px;
+}
+
+body > img {
+    margin-bottom: 20px;
+}
+
+footer {
+    border: 1px solid black;
+}
+
+footer ul {
+    list-style: none;
+    padding-left: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+footer li a {
+    margin-right: 10px;
+    text-decoration: none;
+}
+
+header li:last-child a {
+    margin-right: auto;
 }

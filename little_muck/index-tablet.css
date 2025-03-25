@@ -1,13 +1,13 @@
 @media(max-width: 960px) {
     header > h1 {
-        font-size: 21px;
+        font-size: 19px;
     }
 
     header > a {
-        font-size: 29px;
+        font-size: 27px;
     }
     
     header li a {
-        font-size: 11px;
+        font-size: 9px;
     }
 }
