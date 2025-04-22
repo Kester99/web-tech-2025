@@ -4,9 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Website</title>
+    <!-- link to css-->
     <link rel="stylesheet" href="story.css">
 </head>
 <body>
+    <!-- nav bar -->
     <nav>
         <ul>
             <li><a href="webtech.html">Home</a></li>
@@ -16,18 +18,23 @@
             <li><a href="#section5">Contact</a></li>
         </ul>
     </nav>
+    <!-- where the story is displayed -->
     <div class="story-container">
         <button class="nav-button" id="backButton">Back</button>
         <img src="story-image.jpg" alt="Story Image" class="story-image">
-        <div class="story-text" id="storyText"></div> <!-- New text element -->
+        <div class="story-text" id="storyText"></div>
+        <div id="factZone" class="fact-zone"></div>
+        <div id="factPopup" class="fact-popup"></div>
+
         <button class="nav-button" id="forwardButton">Forward</button>
     </div>
+
 
     <script>
         // Array of image paths
         const images = [
-            'zimage1.jpg',
-            'rheahiding.jpg',
+            'cronuschildren.jpg',
+            'cronustricked.jpg',
             'cronus.jpg',
             'zeus&siblingsfight.jpg',
             'zeusfighting.jpg',
@@ -40,11 +47,11 @@
             'part10.jpg',
             'powerhungry.jpg',
             'kratoskill.jpg',
-            'escape.jpg',
+            'Kratosescape.jpg',
             'zeuskratos.jpg',
             'kratosthrone.jpg'
-          
-           
+
+
         ];
 
         // Array of corresponding texts
@@ -69,6 +76,27 @@
 
 
         ];
+        const facts = [
+            "Cronus used a sickle made by Gaia to overthrow his father, Uranus.",
+            "Zeus was raised in secret on Mount Ida, protected by the Curetes—warrior guardians who drowned out his cries with battle dances.",
+            "The Cyclopes forged Zeus’ thunderbolt, Poseidon’s trident, and Hades’ helm of invisibility—legendary weapons of the gods.",
+            "Tartarus is more than a prison—it's a primordial force, as ancient as Chaos itself.",
+            "Aphrodite was born from sea foam after Cronus threw Uranus' severed parts into the ocean.",
+            "Athena burst fully armored from Zeus’ skull after he swallowed her pregnant mother, Metis.",
+            "Prometheus stole fire from Olympus and gave it to humans, knowing it would lead to eternal torment chained to a mountain.",
+            "Medusa was once a priestess of Athena. After being assaulted by Poseidon in Athena’s temple, she was cursed with serpents for hair.",
+            "The Titan Atlas wasn't just punished—he literally holds up the sky for eternity.",
+            "The River Styx was so sacred that even gods who broke an oath on it faced a century-long punishment.",
+            "Typhon, the most monstrous being in mythology, once ripped out Zeus’ sinews and nearly ended the Olympian reign.",
+            "The Chimera could breathe fire and had the heads of a lion, a goat, and a snake-tail—facing it was a death sentence.",
+            "Dionysus is the only Olympian with a mortal mother—Semele—who died after seeing Zeus’ true godly form.",
+            "Hermes invented the lyre using a tortoise shell... and gifted it to Apollo after stealing his cattle as a baby.",
+            "In the God of War saga, Kratos was a Spartan warrior who unknowingly killed his own family after being tricked by Ares.",
+            "Kratos wears the ashes of his wife and daughter on his skin—giving him the pale 'Ghost of Sparta' appearance.",
+            "Kratos defied fate, killed Ares, and became the new God of War—only to be betrayed by Zeus himself.",
+            "In his quest for revenge, Kratos slays gods, titans, and monsters, leaving Olympus in ruins and the world on the brink of collapse.",
+            "Kratos’ journey is one of vengeance—but also one of redemption, as he ultimately seeks peace and guidance for his son, Atreus."
+        ];
 
         let currentIndex = 0;
 
@@ -80,8 +108,11 @@
         // Function to update the image source and text
         function updateContent() {
             storyImage.src = images[currentIndex];
-            storyText.textContent = texts[currentIndex]; // Update the text
+            storyText.textContent = texts[currentIndex];
+            positionFactZone();
+            factPopup.style.display = 'none';
         }
+
 
         // Event listener for the Back button
         backButton.addEventListener('click', () => {
@@ -94,9 +125,36 @@
             currentIndex = (currentIndex < images.length - 1) ? currentIndex + 1 : 0;
             updateContent();
         });
+        const factZone = document.getElementById('factZone');
+        const factPopup = document.getElementById('factPopup');
+
+        function positionFactZone() {
+            const container = document.querySelector('.story-container');
+            const containerRect = container.getBoundingClientRect();
+            const maxX = container.offsetWidth - 100;
+            const maxY = container.offsetHeight - 100;
+
+            const randomX = Math.floor(Math.random() * maxX);
+            const randomY = Math.floor(Math.random() * maxY);
+
+            factZone.style.left = `${randomX}px`;
+            factZone.style.top = `${randomY}px`;
+        }
+
+        factZone.addEventListener('click', () => {
+            factPopup.style.left = factZone.style.left;
+            factPopup.style.top = factZone.style.top;
+            factPopup.textContent = facts[currentIndex];
+            factPopup.style.display = 'block';
+
+            setTimeout(() => {
+                factPopup.style.display = 'none';
+            }, 10000); // Hide after 10 seconds
+        });
+
 
         // Initialize the first image and text
         updateContent();
     </script>
 </body>
-</html>
+    </html>
