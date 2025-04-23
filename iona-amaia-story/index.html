@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Sets the character encoding for the document -->
+  <meta charset="UTF-8" />
+
+  <!-- Ensures the page scales properly on all devices -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Sets the page title (appears on browser tab) -->
+  <title>The Secret Garden of Iona & Amaia</title>
+
+  <!-- Links to your external CSS stylesheet -->
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- Loads a cute, handwritten font from Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Handlee&display=swap" rel="stylesheet" />
+</head>
+
+<body class="index"> <!-- Applies a specific background style using the .index CSS class -->
+
+  <body class="index"> <!-- Applies a specific background style using the .index CSS class -->
+
+    <nav class="story-nav">
+      <ul>
+        <li><a href="index.html">The Gate</a></li>
+        <li><a href="chapter1.html">The Garden</a></li>
+        <li><a href="chapter2.html">Library</a></li>
+        <li><a href="chapter3.html">Golden Pond</a></li>
+        <li><a href="chapter4.html">The Choice</a></li>
+      </ul>
+    </nav>   
+
+  <!-- Page title -->
+  <header>
+    <h1>The Secret Garden of Iona & Amaia</h1>
+  </header>
+
+  <!-- Main story content -->
+  <div class="container">
+    <!-- Each <p> is a paragraph of the story with highlighted names and words for style -->
+    <p>
+      <span class="name-highlight">Iona</span> and <span class="name-highlight">Amaia</span> had always wondered about the
+      <span class="highlight yellow">ivy-covered gate</span> at the edge of the forest.
+    </p>
+
+    <p>
+      One evening, a soft breeze pushed it open, revealing a
+      <span class="highlight yellow">hidden enchanted garden</span>. As they stepped inside,
+      the air <span class="highlight yellow">shimmered</span>, and the world around them
+      <strong>changed</strong>.
+    </p>
+
+    <p>
+      In the distance, a <span class="highlight green">glowing butterfly</span> fluttered near a
+      <strong>silver tree</strong>, while a <span class="highlight orange">curious hedgehog</span>
+      watched them from beneath a <strong>twisted archway</strong>.
+    </p>
+
+    <!-- Button to start the story. 'data-target' is used in JavaScript to handle the navigation -->
+    <button data-target="chapter1.html">Start Story</button>
+  </div>
+
+  <!-- Footer message -->
+  <footer>
+    <p>🦋 With love from Iona & Amaia 🦋</p>
+  </footer> 
+
+  <!-- Background particle animation effect -->
+  <div id="magicParticles"></div>
+
+  <!-- Loads the particles library -->
+  <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+
+  <!-- Your own custom script (handles particles and button clicks) -->
+  <script src="script.js" defer></script>
+
+</body>
+</html>
