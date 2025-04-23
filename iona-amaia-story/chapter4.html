@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Character encoding and responsive scaling -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Page title for browser tab -->
+  <title>Final Decision - The Garden’s Secret</title>
+
+  <!-- Link to external CSS stylesheet -->
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- Google Fonts for a handwritten storybook look -->
+  <link href="https://fonts.googleapis.com/css2?family=Handlee&display=swap" rel="stylesheet" />
+</head>
+
+<!-- Body has chapter-specific background using the 'chapter4' class -->
+<body class="chapter4">
+
+  <nav class="story-nav">
+    <ul>
+      <li><a href="index.html">The Gate</a></li>
+      <li><a href="chapter1.html">The Garden</a></li>
+      <li><a href="chapter2.html">Library</a></li>
+      <li><a href="chapter3.html">Golden Pond</a></li>
+      <li><a href="chapter4.html">The Choice</a></li>
+    </ul>
+  </nav> 
+
+  <!-- Page heading -->
+  <header>
+    <h1>The Garden’s Secret</h1>
+  </header>
+
+  <!-- Main story content -->
+  <div class="container">
+
+    <!-- Characters and magical decision point -->
+    <p><span class="name-highlight">Iona</span> and <span class="name-highlight">Amaia</span> stood in the heart of the garden.  
+    <span class="highlight yellow">Magic</span> filled the air, waiting for their choice.</p>
+
+    <!-- Visual: library interior -->
+    <img class="story-image" src="iona-amaia-chap4.png" alt="Iona and Amaia Standing" />
+
+    <!-- Environment description -->
+    <p>Behind them was the <span class="highlight yellow">old gate</span>, gently swaying.  
+    Ahead was a <span class="highlight green">silver archway</span>, glowing with wonder.</p>
+
+    <!-- Spoken magical decision -->
+    <p>
+      A voice whispered:  
+      <strong>"Stay, and be part of the garden.  
+      Leave, and carry its magic forever."</strong>
+    </p>
+
+    <!-- Dialogue -->
+    <p>"What if we never get this chance again?" <span class="name-highlight">Amaia</span> asked.</p>
+    <p>"But what about home?" <span class="name-highlight">Iona</span> said.  
+    They looked at each other.</p>
+
+    <img class="story-image" src="iona-amaia-chap4-2.png" alt="Iona and Amaia Looking each other" />
+
+    <!-- Reader must choose the ending -->
+    <p><strong>It was time to choose.</strong></p>
+
+    <!-- Navigation buttons to both endings -->
+    <div class="button-container">
+      <!-- Custom attribute used by JS to navigate -->
+      <button data-target="ending1.html">Enter the Magic</button>
+      <button data-target="ending2.html">Return Home</button>
+    </div>
+  </div>
+
+  <!-- Footer message -->
+  <footer>
+    <p>🦋 With love from Iona & Amaia 🦋</p>
+  </footer>
+
+  <!-- Magic particle background container -->
+  <div id="magicParticles"></div>
+
+  <!-- External library that adds floating particle effects -->
+  <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+
+  <!-- Custom JavaScript to control particles and buttons -->
+  <script src="script.js" defer></script>
+
+</body>
+</html>

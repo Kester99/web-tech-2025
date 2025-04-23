@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Character encoding -->
+  <meta charset="UTF-8" />
+
+  <!-- Make the page responsive on all screen sizes -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Title shown in browser tab -->
+  <title>Chapter 1 - The Enchanted Garden</title>
+
+  <!-- Link to your main CSS file for styles -->
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- Handwriting-style font from Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Handlee&display=swap" rel="stylesheet" />
+</head>
+
+<!-- Apply a specific background using the .chapter1 class -->
+<body class="chapter1">
+
+  <nav class="story-nav">
+    <ul>
+      <li><a href="index.html">The Gate</a></li>
+      <li><a href="chapter1.html">The Garden</a></li>
+      <li><a href="chapter2.html">Library</a></li>
+      <li><a href="chapter3.html">Golden Pond</a></li>
+      <li><a href="chapter4.html">The Choice</a></li>
+    </ul>
+  </nav> 
+
+  <!-- Page heading -->
+  <header>
+    <h1>The Enchanted Garden</h1>
+  </header>
+
+  <!-- Story text and buttons -->
+  <div class="container">
+
+    <!-- Story paragraph with styled name and highlights -->
+    <p>The <span class="highlight yellow">garden</span> glowed with quiet <span class="highlight green">magic</span>, like it had been waiting just for them. 
+      <span class="name-highlight">Iona</span> gently touched a soft, <span class="highlight yellow">glowing flower</span>.
+    </p>
+
+    <p>"It feels <span class="highlight orange">alive</span>," she whispered. 
+      <span class="name-highlight">Amaia</span> touched the <span class="highlight yellow">shiny grass</span> and saw little glowing footprints appear. 
+      "It’s like the garden knows we’re here," she said, smiling.
+    </p>
+
+    <!-- Visuals to support the story -->
+    <p class="story-text">
+      In front of them, two paths appeared: To the left, a <span class="highlight green">glowing butterfly</span> flew through the 
+      <span class="highlight yellow">silver mist</span>. Its wings left little sparkles in the air.
+    </p>
+    <img class="story-image" src="butterfly.jpg" alt="Glowing Butterfly" />
+
+    <p class="story-text">
+      To the right, a <span class="highlight orange">friendly hedgehog</span> peeked out from under 
+      <span class="highlight yellow">twisty vines</span>. Its tiny eyes watched them closely.
+    </p>
+    <img class="story-image" src="hedgehog.jpg" alt="Friendly Hedgehog" />
+
+    <!-- The story decision -->
+    <p><span class="name-highlight">Amaia</span> looked at both paths. "Should we follow the light or go where it’s quiet?"</p>
+    <p><strong>It was their choice.</strong></p>
+
+    <!-- Navigation buttons with data-link (handled in JS) -->
+    <div class="button-container">
+      <button data-link="chapter2.html">Follow the Butterfly</button>
+      <button data-link="chapter3.html">Follow the Hedgehog</button>
+    </div>
+  </div>
+
+  <!-- Footer message -->
+  <footer>
+    <p>🦋 With love from Iona & Amaia 🦋</p>
+  </footer>
+
+  <!-- Magic background effect using particles.js -->
+  <div id="magicParticles"></div> 
+  
+  <!-- Load the particles library -->
+  <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+
+  <!-- Your custom JavaScript file (handles particles and button clicks) -->
+  <script src="script.js" defer></script>
+
+</body>
+</html>
