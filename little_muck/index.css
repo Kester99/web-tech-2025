@@ -2,21 +2,22 @@ body {
     margin: 0;
     font-family: "Lexend", sans-serif;
     font-optical-sizing: auto;
+    background-color: whitesmoke;
 }
 
 header {
     height: 100px;
     width: 100%;
-    background-color: white;
+    background-color: whitesmoke;
     display: flex;
-    border: 1px solid black;
+    border: 1px solid #283618;
     position: fixed;
     top: 0;
     z-index: 1;
 }
 
 header > * {
-    border: 1px solid black;
+    border: 1px solid #283618;
     margin: auto;
     padding: 7px;
     height: 50%;
@@ -69,7 +70,7 @@ main {
 }
 
 main > * {
-    border: 1px solid black;
+    border: 1px solid #283618;
     margin: 20px;
 }
 
@@ -115,12 +116,12 @@ main img {
 
 body > img {
     margin-bottom: 20px;
-    border: 1px solid black;
+    border: 1px solid #283618;
     max-width: 50%;
 }
 
 footer {
-    border: 1px solid black;
+    border: 1px solid #283618;
 }
 
 footer ul {
