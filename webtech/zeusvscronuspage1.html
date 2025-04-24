@@ -20,12 +20,17 @@
     </nav>
     <!-- where the story is displayed -->
     <div class="story-container">
+        <!-- Back button to go back to previous pages --> 
         <button class="nav-button" id="backButton">Back</button>
+        <!-- loads the image from the array in the javascript -->
         <img src="story-image.jpg" alt="Story Image" class="story-image">
+        <!-- loads the text from the array of lines from javascript -->
         <div class="story-text" id="storyText"></div>
+        <!-- loads a random position for the fact to be loaded onto in the story box --> 
         <div id="factZone" class="fact-zone"></div>
+        <!-- actually pops up the fact once it has been found and clicked --> 
         <div id="factPopup" class="fact-popup"></div>
-
+        <!-- forward button to progress to the next page --> 
         <button class="nav-button" id="forwardButton">Forward</button>
     </div>
 
@@ -76,6 +81,7 @@
 
 
         ];
+        //array of facts to be used on random onclicks 
         const facts = [
             "Cronus used a sickle made by Gaia to overthrow his father, Uranus.",
             "Zeus was raised in secret on Mount Ida, protected by the Curetes—warrior guardians who drowned out his cries with battle dances.",
@@ -97,63 +103,86 @@
             "In his quest for revenge, Kratos slays gods, titans, and monsters, leaving Olympus in ruins and the world on the brink of collapse.",
             "Kratos’ journey is one of vengeance—but also one of redemption, as he ultimately seeks peace and guidance for his son, Atreus."
         ];
-
+        //tracks the current index of the image/text/fact to be displayed
         let currentIndex = 0;
-
+        // Reference to the image element
         const storyImage = document.querySelector('.story-image');
-        const storyText = document.getElementById('storyText'); // Reference to the text element
+        // Reference to the text element
+        const storyText = document.getElementById('storyText'); 
+        // Reference to the back button
         const backButton = document.getElementById('backButton');
+        // Reference to the forward button
         const forwardButton = document.getElementById('forwardButton');
 
         // Function to update the image source and text
         function updateContent() {
+            //set the image source based on the current index
             storyImage.src = images[currentIndex];
+            //set the text source based on the current index
             storyText.textContent = texts[currentIndex];
+            //reposition the fact zone randomly within the container
             positionFactZone();
+            //hide the fact popup when the content changes
             factPopup.style.display = 'none';
         }
 
 
         // Event listener for the Back button
         backButton.addEventListener('click', () => {
+            //if not in first index go to the previous otherwise loop to the last image
             currentIndex = (currentIndex > 0) ? currentIndex - 1 : images.length - 1;
+            //refresh content based on new index
             updateContent();
         });
 
         // Event listener for the Forward button
         forwardButton.addEventListener('click', () => {
+            //if not in the last index go to the next other wise loop to first image
             currentIndex = (currentIndex < images.length - 1) ? currentIndex + 1 : 0;
+            //refresh content based on new index
             updateContent();
         });
+        //reference to the next clickable fact
         const factZone = document.getElementById('factZone');
+        //reference to the popup that displays text
         const factPopup = document.getElementById('factPopup');
-
+        //function to randomly place the fact zone within the image container
         function positionFactZone() {
+            //reference to the container
             const container = document.querySelector('.story-container');
+            //getting the dimensions to the container
             const containerRect = container.getBoundingClientRect();
+            //max x position leaving a margin
             const maxX = container.offsetWidth - 100;
+            //max y position leaving a margin
             const maxY = container.offsetHeight - 100;
-
+            //generate a random x position
             const randomX = Math.floor(Math.random() * maxX);
+            //generate a random y position
             const randomY = Math.floor(Math.random() * maxY);
-
+            //apply x position to fact zone
             factZone.style.left = `${randomX}px`;
+            //apply y position to fact zone
             factZone.style.top = `${randomY}px`;
         }
-
+        //event listenere for clicking the fact zone
         factZone.addEventListener('click', () => {
+            //position popup same as fact zone x
             factPopup.style.left = factZone.style.left;
+            //position popup same as fact zone y
             factPopup.style.top = factZone.style.top;
+            //show the fact corresponding to current index
             factPopup.textContent = facts[currentIndex];
+            //make the popup visible
             factPopup.style.display = 'block';
-
+            //hides the popup after 10 seconds
             setTimeout(() => {
                 factPopup.style.display = 'none';
-            }, 10000); // Hide after 10 seconds
+            }, 10000); 
         });
 
 
-        // Initialize the first image and text
+        // Initialize the content when the page loads
         updateContent();
     </script>
 </body>
