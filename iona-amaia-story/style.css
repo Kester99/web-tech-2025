@@ -226,6 +226,20 @@ footer {
   color: #ffd700; /* Golden hover color */
 }
 
+/* Image hover base style */
+.story-thumbnail {
+  transition: all 0.3s ease;
+  border-radius: 12px;
+  cursor: pointer;
+}
+
+/* Optional glow effect on hover */
+.story-thumbnail:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.6);
+}
+
+
 
 /* ----------------------------------- */
 /* MOBILE RESPONSIVE STYLES (≤768px)  */
