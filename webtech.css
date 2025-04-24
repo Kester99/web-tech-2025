@@ -1,66 +1,99 @@
 body {
     margin: 0;
+    /* declaring the font*/
     font-family: Arial, sans-serif;
+    /* Change background to white */
     background-color: white;
-    color: black; /* Change text color to black for visibility */
+    /* Change text color to black for  visibility */
+    color: black; 
 }
 
 nav {
+    /* dark background for the navigation bar*/
     background-color: #333;
+    /* space inside the nav bar */
     padding: 10px;
 }
 
 nav ul {
+    /* remove bullet points from the list*/
     list-style-type: none;
+    /* remove default padding*/
     padding: 0;
 }
 
 nav ul li {
+    /* display items in a single row*/
     display: inline;
+    /* space  between each nav item */
     margin-right: 20px;
 }
 
 nav ul li a {
+    /* white text for links*/
     color: white;
+    /* removes the underline line on links*/
     text-decoration: none;
 }
 
 nav ul li a:hover {
+    /* changes text to black on hover*/
     color:black;
+    /* invert background on hover*/
     background-color: white;
+    /* underline the link on hover*/
     text-decoration: underline;
 }
 
 .content {
+    /* use flexbox for layout*/
     display: flex;
+    /* stacks vertically */
     flex-direction: column;
+    /* centre horizontally*/
     align-items: center;
+    /* full width of the page*/
     width: 100%;
 }
 
 .section {
+    /* arrange image and text side-by-side*/
     display: flex;
+    /* align content to the top of the section*/
     align-items: flex-start; 
+    /* vertical space between sections*/
     margin: 20px 0;
+    /* limit section width to 80% of the container*/
     width: 80%; 
+    /* prevent it from getting too wide*/
     max-width: 800px; 
+    /* light grey background for contrast*/
     background-color: #f9f9f9;
+    /* inner spacing around the content*/
     padding: 10px;
+    /* rounded corners*/
     border-radius: 8px;
+    /* subtle drop shadow*/
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
 }
 
 .section img {
+    /* fixed image width*/
     width: 200px;
+    /* maintain aspect ratio*/
     height: auto;
+    /* smooth scaling on hover*/
     transition: transform 0.3s;
 }
 
 .section img:hover {
+    /* slight zoom effect on hover */
     transform: scale(1.1);
 }
 
 .section p {
+    /* spcaing between image and text*/
     margin-left: 20px;
+    /*let the paragraph fill the remaining space */
     flex: 1; 
 }
