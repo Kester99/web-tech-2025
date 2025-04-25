@@ -11,7 +11,7 @@
 /* GENERAL BODY STYLING               */
 /* ----------------------------------- */
 body {
-  font-family: 'Delius', cursive;
+  font-family: 'Patrick Hand', cursive;
   font-size: 40px;
   color: white;
   text-align: center;
@@ -31,7 +31,7 @@ body {
 .chapter4,
 .ending1,
 .ending2 {
-  background-size: 45%;
+  background-size: 100%;
   background-position: center;
   background-repeat: no-repeat;
   background-attachment: fixed;
@@ -41,20 +41,20 @@ body {
 /* PAGE-SPECIFIC BACKGROUNDS          */
 /* All pages use the same background image */
 /* ----------------------------------- */
-.index    { background-image: url('BG-rough-sketch-v2.jpg'); }
-.chapter1 { background-image: url('BG-rough-sketch-v2.jpg'); }
-.chapter2 { background-image: url('BG-rough-sketch-v2.jpg'); }
-.chapter3 { background-image: url('BG-rough-sketch-v2.jpg'); }
-.chapter4 { background-image: url('BG-rough-sketch-v2.jpg'); }
-.ending1  { background-image: url('BG-rough-sketch-v2.jpg'); }
-.ending2  { background-image: url('BG-rough-sketch-v2.jpg'); }
+.index    { background-image: url('green-leaf-framed-background.jpg'); }
+.chapter1 { background-image: url('green-leaf-framed-background.jpg'); }
+.chapter2 { background-image: url('green-leaf-framed-background.jpg'); }
+.chapter3 { background-image: url('green-leaf-framed-background.jpg'); }
+.chapter4 { background-image: url('green-leaf-framed-background.jpg'); }
+.ending1  { background-image: url('green-leaf-framed-background.jpg'); }
+.ending2  { background-image: url('green-leaf-framed-background.jpg'); }
 
 /* ----------------------------------- */
 /* PAGE TITLE STYLING (HEADER H1)     */
 /* ----------------------------------- */
 header h1 {
-  font-family: 'Handlee', cursive;
-  font-size: 60px;
+  font-family: 'Sofia', cursive;
+  font-size: 70px;
   font-weight: bold;
   color: #79f07b;
   margin-bottom: 30px;
@@ -77,29 +77,13 @@ header h1 {
 /* PARAGRAPH TEXT STYLE               */
 /* ----------------------------------- */
 p {
-  font-family: 'Handlee', cursive;
-  font-size: 35px;
+  font-family: 'Patrick Hand', cursive;
+  font-size: 50px;
   line-height: 1.6;
   margin-bottom: 40px;
-  text-shadow: 1px 1px 2px #000;
+  /*text-shadow: 1px 1px 2px #000;*/
   color: #eb139f;
 }
-
-/* ----------------------------------- */
-/* SPECIAL HIGHLIGHTED TEXT           */
-/* ----------------------------------- */
-.highlight {
-  font-size: 40px;
-  font-weight: bold;
-  text-shadow: 1px 1px 2px #fff;
-}
-
-/* ----------------------------------- */
-/* KEYWORD COLOR CLASSES              */
-/* ----------------------------------- */
-.yellow { color: yellow; }
-.green  { color: lightgreen; }
-.orange { color: orange; }
 
 /* ----------------------------------- */
 /* BUTTON STYLES                      */
@@ -174,17 +158,17 @@ footer {
 /* CHARACTER NAME HIGHLIGHTS          */
 /* ----------------------------------- */
 .name-highlight {
-  font-size: 45px;
+  font-size: 60px;
   color: #ffe066;
-  font-weight: bold;
-  font-family: 'Handlee', cursive;
+  font-weight: normal;
+  font-family: 'Mystery Quest', cursive; /* ← New font here */
   text-shadow: 1px 1px 2px #fff;
   display: inline-block;
   transition: transform 0.5s ease-in-out;
 }
 
 .name-highlight:hover {
-  transform: scale(1.4);
+  transform: scale(1.2);
   color: #ffd700;
 }
 /* ----------------------------------- */
@@ -261,7 +245,7 @@ footer {
   }
 
   header h1 {
-    font-family: 'Handlee', cursive;
+    font-family: 'Sofia', cursive;
     font-size: 48px;
     color: #a86fe1;
     margin-bottom: 20px;
@@ -272,7 +256,7 @@ footer {
   }
 
   p {
-    font-family: 'Handlee', cursive;
+    font-family: 'Patrick Hand', cursive;
     font-size: 28px;
     line-height: 1.4;
     margin-bottom: 30px;
@@ -290,7 +274,7 @@ footer {
     font-size: 40px;
     color: #ffe066;
     font-weight: bold;
-    font-family: 'Handlee', cursive;
+    font-family: 'Mystery Quest', cursive;
     text-shadow: 1px 1px 2px #fff;
     transition: transform 0.3s ease-in-out;
   }
