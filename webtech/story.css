@@ -157,3 +157,27 @@ nav {
     /* Text color */
     color:black;
 }
+
+.progress-bar-container {
+    /* to take up the full width of the screen */
+    width: 100%;
+    /* making the progress bar only 10 pixels high*/
+    height: 10px;
+    /* Setting the bar as green */
+    background-color: #00ff22;
+    /* Rounding the corners to give a softer look*/
+    border-radius: 5px;
+    /*if anything tries to overflow and go beyond the boundaries it gets cut off */
+    overflow: hidden;
+    /*space from the bottom */
+    margin-bottom: 20px;
+}
+
+.progress-bar {
+    height: 100%;
+    width: 0%;
+    /*setting the colour black to bled in with the background */
+    background-color: #000000; 
+    /* transition for it to look like its building up to the line rather than to be just a block increase*/
+    transition: width 0.3s ease-in-out;
+}
