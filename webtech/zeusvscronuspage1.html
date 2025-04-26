@@ -124,6 +124,8 @@
             positionFactZone();
             //hide the fact popup when the content changes
             factPopup.style.display = 'none';
+            //display the porgress bar 
+            updateProgressBar();
         }
 
 
@@ -180,6 +182,15 @@
                 factPopup.style.display = 'none';
             }, 10000); 
         });
+         //function to update the progress bar based on the current story index
+        function updateProgressBar() {
+            //get a reference to the progress bar
+            const progressBar = document.getElementById('progressBar');   
+            //calculation for the percentage divided the current index by the total number of slides -1 * 100
+            const percentage = (currentIndex / (images.length - 1)) * 100;
+            //set the width of the progress bar to match the calculated percentage
+            progressBar.style.width = `${percentage}%`;
+            }
 
 
         // Initialize the content when the page loads
