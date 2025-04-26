@@ -53,11 +53,23 @@ body {
 /* PAGE TITLE STYLING (HEADER H1)     */
 /* ----------------------------------- */
 header h1 {
-  font-family: 'Sofia', cursive;
+  font-family: 'Marhey', cursive;
   font-size: 70px;
   font-weight: bold;
-  color: #79f07b;
+  color: #304e07;
   margin-bottom: 30px;
+}
+
+/* ----------------------------------- */
+/* HEADER IMAGE INSIDE TITLE          */
+/* ----------------------------------- */
+.header-image {
+  width: 100%;         /* Scales responsively */
+  max-width: 1100px;   /* Maximum width limit */
+  height: auto;        /* Maintains aspect ratio */
+  margin: 0 auto;      /* Centers the image */
+  display: block;      /* Treats image as block for centering */
+  border-radius: 12px; /* Optional rounded corners */
 }
 
 /* ----------------------------------- */
@@ -77,12 +89,11 @@ header h1 {
 /* PARAGRAPH TEXT STYLE               */
 /* ----------------------------------- */
 p {
-  font-family: 'Patrick Hand', cursive;
+  font-family: 'Atma', cursive;
   font-size: 50px;
   line-height: 1.6;
   margin-bottom: 40px;
-  /*text-shadow: 1px 1px 2px #000;*/
-  color: #eb139f;
+  color: #304e07;
 }
 
 /* ----------------------------------- */
@@ -159,24 +170,23 @@ footer {
 /* ----------------------------------- */
 .name-highlight {
   font-size: 60px;
-  color: #ffe066;
+  color: #fe6057;
   font-weight: normal;
   font-family: 'Mystery Quest', cursive; /* ← New font here */
-  text-shadow: 1px 1px 2px #fff;
   display: inline-block;
   transition: transform 0.5s ease-in-out;
 }
 
 .name-highlight:hover {
   transform: scale(1.2);
-  color: #ffd700;
+  color: #b30c1f;
 }
 /* ----------------------------------- */
 /* SIMPLE NAVIGATION BAR              */
 /* ----------------------------------- */
 .story-nav {
   width: 100%;
-  background: rgba(255, 255, 255, 0.2); /* Transparent white background */
+  background: rgba(129, 235, 170, 0.2); /* Transparent background */
   padding: 40px 0;
   position: sticky;
   top: 0;
@@ -197,33 +207,23 @@ footer {
   font-family: 'Handlee', cursive;
   font-size: 24px;
   font-weight: bold;
-  color: #fff8dc; /* A soft pastel cream */
+  color: #034a08; 
   text-decoration: none;
   padding: 8px 16px;
   border-radius: 12px;
-  transition: background 0.3s;
-  text-shadow: 1px 1px 2px #444; /* Adds contrast */
+  transition: background 0.3s;  
 }
 
 .story-nav a:hover {
-  background: rgba(255, 255, 255, 0.4); /* Light background on hover */
-  color: #ffd700; /* Golden hover color */
+  color: #14caac; /* Golden hover color */
 }
 
-/* Image hover base style */
+/* Image hover style */
 .story-thumbnail {
   transition: all 0.3s ease;
   border-radius: 12px;
   cursor: pointer;
 }
-
-/* Optional glow effect on hover */
-.story-thumbnail:hover {
-  transform: scale(1.05);
-  box-shadow: 0 0 15px rgba(255, 255, 255, 0.6);
-}
-
-
 
 /* ----------------------------------- */
 /* MOBILE RESPONSIVE STYLES (≤768px)  */
@@ -236,18 +236,18 @@ footer {
   .chapter4,
   .ending1,
   .ending2 {
-    background-size: contain;
-    background-repeat: no-repeat;
+    background-size: 100%;
+    background-repeat: repeat;
     background-position: top center;
     background-attachment: fixed;
-    background-position-y: 115px;
-    background-color: #fff0f5; /* light pink for contrast */
+    background-position-y: 500px;
+    background-color: #eef7f1; 
   }
 
   header h1 {
-    font-family: 'Sofia', cursive;
-    font-size: 48px;
-    color: #a86fe1;
+    font-family: 'Marhey', cursive;
+    font-size: 40px;
+    color: #304e07;
     margin-bottom: 20px;
   }
 
@@ -256,33 +256,42 @@ footer {
   }
 
   p {
-    font-family: 'Patrick Hand', cursive;
-    font-size: 28px;
+    font-family: 'Atma', cursive;
+    font-size: 25px;
     line-height: 1.4;
-    margin-bottom: 30px;
-    text-shadow: 1px 1px 2px #000;
-    color: #eb139f;
-  }
-
-  .highlight {
-    font-size: 36px;
-    font-weight: bold;
-    text-shadow: 1px 1px 2px #fff;
+    margin-bottom: 40px;
+    color: #304e07;
   }
 
   .name-highlight {
-    font-size: 40px;
-    color: #ffe066;
+    font-size: 25px;
+    color: #fe6057;
     font-weight: bold;
     font-family: 'Mystery Quest', cursive;
-    text-shadow: 1px 1px 2px #fff;
     transition: transform 0.3s ease-in-out;
   }
 
   .name-highlight:hover {
     transform: scale(1.1);
-    color: #ffd700;
+    color: #b30c1f;
   }
+
+  .story-nav ul {
+    flex-direction: row; /* stay horizontal */
+    gap: 20px; /* a little smaller gap */
+  }
+
+  .story-nav a {
+    font-size: 20px; /* slightly smaller text */
+    padding: 6px 10px; /* slightly smaller padding */
+  }
+
+  .story-image {
+    width: 90%;
+    max-height: 200px;
+  } 
+  
 }
+
 
 

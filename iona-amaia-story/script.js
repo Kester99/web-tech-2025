@@ -22,16 +22,14 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  // NEW: Hover effect on story images
+  // Hover effect on story images
   const thumbnails = document.querySelectorAll(".story-thumbnail");
   thumbnails.forEach(thumbnail => {
     thumbnail.addEventListener("mouseenter", () => {
       thumbnail.style.transform = "scale(1.05)";
-      thumbnail.style.boxShadow = "0 0 15px rgba(255, 255, 255, 0.6)";
     });
     thumbnail.addEventListener("mouseleave", () => {
       thumbnail.style.transform = "scale(1)";
-      thumbnail.style.boxShadow = "none";
     });
   });
 });
