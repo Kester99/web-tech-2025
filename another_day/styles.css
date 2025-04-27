@@ -9,7 +9,6 @@ html {
 }
 
 /* non-default font */
-
 @font-face {
     font-family: 'SpecialElite';
     src:url(fonts/SpecialElite.ttf) format('truetype');
@@ -17,7 +16,7 @@ html {
     font-style: normal;
 }
 
-
+/* heading styles */
 h1 {
     font-weight: bolder;
     color: var(--color-5);
@@ -30,12 +29,12 @@ h3 {
     padding: 20px;
 }
 
+/* paragraph styles */
 p {
     color: var(--color-4);
 }
 
-
-
+/* body settings */
 body {
     height: 100%;
     text-align: center;
@@ -44,12 +43,9 @@ body {
     font-family: 'SpecialElite', Arial, Helvetica, sans-serif;
     font: 16px/1.5;
     overflow-y: hidden;
-
 }
 
-
-/*shared bg settings*/
-
+/* shared background settings */
 .p1,.p2,.p3,.p4,.p5,.p6,.p7,.p8,.p9,.p10{
     position: fixed;
     top: 0;
@@ -60,19 +56,15 @@ body {
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
-
 }
 
-/*specific backgrounds*/
-
+/* specific backgrounds */
 .p1 {
     background-image: url('images/futurecity.jpg');
     max-width: 100%;
 }
 
-
-/*story content + inline image settings*/
-
+/* story container settings */
 .story-container {
     box-sizing: border-box;
     position:relative;
@@ -92,6 +84,7 @@ body {
     line-height: 200%;
 }
 
+/* story image header settings */
 .story-image-header {
     width: 100%;
     max-height: 400px;
@@ -99,16 +92,15 @@ body {
     display: block;
     margin: auto;
     padding-bottom: 20px;
-  }
+}
 
-
-  /*header settings*/
+/* header settings */
 .header {
     display: block;
-    position: sticky;
+    position: sticky; /* make the header stick to the top */
     top: 0px;
-    z-index: 1;
-    flex-direction: column;
+    z-index: 1; /* ensure it stays above other content */
+    flex-direction: column; /* align items in a column */
     width:100%;
     text-align: center;
     background-color: #1f1b7999;
@@ -117,7 +109,7 @@ body {
     backdrop-filter: grayscale(100%) blur(2px);
 }
 
-/* popout navigation menu*/
+/* popout navigation menu */
 .nav { 
     height: 100vh;
     width: 0;
@@ -126,11 +118,12 @@ body {
     top: 0;
     left: 0;
     background-color: var(--color-1);
-    overflow-x: hidden;
+    overflow-x: hidden; /* hides horizontal scroll */
     padding-top: 60px;
     transition: 0.5s; 
 }
 
+/* navigation links */
 .nav a {
     padding: 8px 8px 8px 32px;
     text-decoration: none;
@@ -144,6 +137,7 @@ body {
     color: var(--color-4);
 }  
 
+/* close button for navigation */
 .nav .close-nav {
     position: absolute;
     top: 0;
@@ -153,6 +147,7 @@ body {
     transition: 0.3s;
 }
 
+/* hamburger menu settings */
 .hamburger {
     position: absolute;
     top: 20px;
@@ -169,6 +164,7 @@ body {
     transition: 0.4s;
 }
 
+/* hamburger menu animation */
 .change .bar1 {
     transform: rotate(-45deg) translate(-6px, 6px);
 }
@@ -179,22 +175,21 @@ body {
     transform: rotate(45deg) translate(-6px, -6px);
 }
 
-/* Main content */
+/* main content settings */
 #main {
-    transition: margin-left 0.5s; /* Smooth transition for shifting */
-    position: relative; /* Ensure it doesn't overlap with the navbar */
-    z-index: 1; /* Keep it below the navbar */
-    min-height: 100vh;
+    transition: margin-left 0.5s;
+    position: relative; 
+    z-index: 1; 
+    min-height: 100vh; /* ensure it takes full height */
 }
 
-
+/* link button styles */
 .link, .link:link, .link:visited {
     box-sizing: border-box;
     color: var(--color-5);
     background-color: var(--color-2);
     text-decoration: none;
     font-weight: bold;
-    
     margin:auto;
     margin-top: 30px;
     padding: 10px 20px;
@@ -203,7 +198,6 @@ body {
     width: 25%;
     display: inline-flex;
     justify-content: center;
-    
 }
 
 .link:hover, .link:active {
@@ -211,9 +205,9 @@ body {
     color: var(--color-5);
     text-decoration:none;
     box-shadow: 0px 0px 5px 3px var(--color-2);
-    
 }
 
+/* glowing text effect */
 .glow {
     -webkit-animation: glow 1s ease-in-out infinite alternate;
     animation: glow 1s ease-in-out infinite alternate;
@@ -228,29 +222,11 @@ body {
     }
 }
 
-
-/* colour palette */
-.color-1 {
-    color: #1f1b79;
-  }
-  .color-2 {
-    color: #5c2f92;
-  }
-  .color-3 {
-    color: #a03b5f;
-  }
-  .color-4 {
-    color: #f2a36e;
-  }
-  .color-5 {
-    color: #f8e5a0;
-  }
-  
-  /* color palette variables */
-  :root {
+/* color palette variables */
+:root {
     --color-1: #1f1b79;
     --color-2: #5c2f92;
     --color-3: #a03b5f;
     --color-4: #f2a36e;
     --color-5: #f8e5a0;
-  }
+}
