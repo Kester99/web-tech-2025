@@ -13,7 +13,7 @@
   <!-- Link to external CSS for styling -->
   <link rel="stylesheet" href="style.css" />
 
-  <!-- Handlee font gives a playful, handwritten feel -->
+  <!-- Loads handwritten fonts from Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Atma&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Marhey&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Handlee&display=swap" rel="stylesheet">
@@ -21,9 +21,10 @@
   <link href="https://fonts.googleapis.com/css2?family=Sofia&family=Mystery+Quest&display=swap" rel="stylesheet">
 </head>
 
-<!-- Add class for background style specific to this ending -->
+<!-- Body tag includes class for background style specific to this ending -->
 <body class="ending2">
 
+  <!-- Navigation Bar -->
   <nav class="story-nav">
     <ul>
       <li><a href="index.html">The Gate</a></li>
@@ -32,52 +33,54 @@
       <li><a href="chapter3.html">Golden Pond</a></li>
       <li><a href="chapter4.html">The Choice</a></li>
     </ul>
-  </nav> 
+  </nav>
 
-  <!-- Page header title -->
+  <!-- Page heading -->
   <header>
     <h1>BACK TO THE REAL WORLD</h1>
   </header>
 
-  <!-- Main story container -->
+  <!-- Story text and button -->
   <div class="container">
-    <!-- Story text using span classes for highlights -->
+
+    <!-- Story paragraphs -->
     <p><span class="name-highlight">Iona</span> and <span class="name-highlight">Amaia</span> looked back one last time,  
-    then stepped through the <strong>old gate.</strong></p>
+    then stepped through the <strong>old gate</strong>.</p>
 
     <p>A soft breeze followed, like the garden was saying goodbye.</p>
 
-    <img class="story-image story-thumbnail" src="the-breeze-no-bg.png" alt="Old Gate" />
+    <img class="story-image story-thumbnail" src="images/the-breeze-no-bg.png" alt="Old Gate" />
 
-    <p>The <strong>magic</strong> faded. The garden was gone—hidden behind the <strong>ivy</strong></p>
+    <p>The <strong>magic</strong> faded. The garden was gone—hidden behind the <strong>ivy</strong>.</p>
 
     <p>"Was it real?" <span class="name-highlight">Iona</span> asked.</p>
 
-    <p><span class="name-highlight">Amaia</span> held up a <strong>silver petal.</strong>  
+    <p><span class="name-highlight">Amaia</span> held up a <strong>silver petal</strong>.  
     "I think we’ll always know."</p>
 
-    <img class="story-image story-thumbnail" src="amaia-petal-end2-removed.png" alt="Amaia Silver Petal" />
+    <img class="story-image story-thumbnail" src="images/amaia-petal-end2-removed.png" alt="Amaia Silver Petal" />
 
     <p>The sky seemed brighter as they walked home.  
     <strong>The garden’s magic stayed with them.</strong></p>
 
     <!-- Navigation button back to the start -->
     <button data-target="index.html">Play Again</button>
+
   </div>
 
   <!-- Footer message -->
   <footer>
     <p>🦋 With love from Iona & Amaia 🦋</p>
-    <p style="font-size: 25px; margin-top: 10px; color: #ccc;">"Forever in our hearts" 🐾💛 Meatball 💛🐾 </p>
+    <p style="font-size: 25px; margin-top: 10px; color: #ccc;">"Forever in our hearts" 🐾💛 Meatball 💛🐾</p>
   </footer>
 
   <!-- Background particle effect layer -->
   <div id="magicParticles"></div>
 
-  <!-- Load the particles.js library -->
+  <!-- Loads the particles library -->
   <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
 
-  <!-- Custom script for particle animation and button linking -->
+  <!-- JS script file -->
   <script src="script.js" defer></script>
 
 </body>

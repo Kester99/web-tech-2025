@@ -20,6 +20,24 @@
     </nav>
     <!-- where the story is displayed -->
     <div class="story-container">
+        <!-- Progress Bar Container -->
+        <div class="progress-bar-container">
+            <div class="progress-bar" id="progressBar"></div>
+        </div>
+        <!-- Quiz Modal -->
+        <div id="quizModal" class="quiz-modal">
+            <div class="quiz-content">
+                <h2 id="quizQuestion">Question will go here</h2>
+                <div id="quizAnswers">
+                    <button class="quiz-answer" onclick="checkAnswer(0)">Answer 1</button>
+                    <button class="quiz-answer" onclick="checkAnswer(1)">Answer 2</button>
+                    <button class="quiz-answer" onclick="checkAnswer(2)">Answer 3</button>
+                    <button class="quiz-answer" onclick="checkAnswer(3)">Answer 4</button>
+                </div>
+                <p id="quizResult"></p>
+                
+            </div>
+        </div>
         <!-- Back button to go back to previous pages --> 
         <button class="nav-button" id="backButton">Back</button>
         <!-- loads the image from the array in the javascript -->
@@ -27,7 +45,10 @@
         <!-- loads the text from the array of lines from javascript -->
         <div class="story-text" id="storyText"></div>
         <!-- loads a random position for the fact to be loaded onto in the story box --> 
-        <div id="factZone" class="fact-zone"></div>
+        <div id="factZone" class="fact-zone">
+            <img src="fact.png" alt="Click for a fact!" class="fact-image" style="width: 50px; height: auto;">
+
+        </div>
         <!-- actually pops up the fact once it has been found and clicked --> 
         <div id="factPopup" class="fact-popup"></div>
         <!-- forward button to progress to the next page --> 
@@ -36,6 +57,66 @@
 
 
     <script>
+        let currentQuizIndex = 0;
+        // To check if the quiz is active
+        let isInQuiz = false;  
+        //sound effects
+        const pageturn = new Audio('turnpage.mp3');
+        // 1.0 is the maximum volume (100%)
+        pageturn.volume = 1.0; 
+        //quiz data 
+        const quizQuestions = [
+        {
+            question: "What was the main reason Cronus swallowed his children?",
+            answers: [
+                "He was afraid they would take over his throne.",
+                "He hated his children.",
+                "He wanted to protect them.",
+                "He was cursed to eat them."
+            ],
+            correctAnswer: 0 // Index of correct answer
+        },
+        {
+            question: "Who helped Zeus defeat the Titans?",
+            answers: [
+                "The Olympians",
+                "The Cyclopes and Hecatoncheires",
+                "The Furies",
+                "Athena"
+            ],
+            correctAnswer: 1
+        },
+        {
+            question: "What was the punishment of Prometheus?",
+            answers: [
+                "He was banished to the Underworld.",
+                "He was chained to a mountain where an eagle ate his liver every day.",
+                "He was cursed to live forever.",
+                "He had to fight Typhon."
+            ],
+            correctAnswer: 1
+        },
+        {
+            question: "What was Kratos' biggest regret?",
+            answers: [
+                "Killing Zeus",
+                "Killing his own family",
+                "Turning against Ares",
+                "Destroying Mount Olympus"
+            ],
+            correctAnswer: 1
+        },
+        {
+            question: "Who was the father of Zeus?",
+            answers: [
+                "Cronus",
+                "Zeus was born from chaos.",
+                "Hades",
+                "Uranus"
+            ],
+            correctAnswer: 0
+        }
+    ];
         // Array of image paths
         const images = [
             'cronuschildren.jpg',
@@ -126,11 +207,21 @@
             factPopup.style.display = 'none';
             //display the porgress bar 
             updateProgressBar();
+            transitionContent(images[currentIndex], texts[currentIndex]);
+            // Only trigger a new quiz every 5 pages
+            if (currentIndex !== 0 && currentIndex % 5 === 0) {
+                startQuiz();
+            }
+
+
         }
 
 
         // Event listener for the Back button
         backButton.addEventListener('click', () => {
+            pageturn.currentTime = 0;
+            //sound effect
+            pageturn.play();
             //if not in first index go to the previous otherwise loop to the last image
             currentIndex = (currentIndex > 0) ? currentIndex - 1 : images.length - 1;
             //refresh content based on new index
@@ -139,6 +230,9 @@
 
         // Event listener for the Forward button
         forwardButton.addEventListener('click', () => {
+            pageturn.currentTime = 0;
+            //sound effect
+            pageturn.play();
             //if not in the last index go to the next other wise loop to first image
             currentIndex = (currentIndex < images.length - 1) ? currentIndex + 1 : 0;
             //refresh content based on new index
@@ -191,8 +285,81 @@
             //set the width of the progress bar to match the calculated percentage
             progressBar.style.width = `${percentage}%`;
             }
+        function transitionContent(newImageSrc, newText) {
+            storyImage.style.opacity = 0;
+            storyText.style.opacity = 0;
+
+            setTimeout(() => {
+                storyImage.src = newImageSrc;
+                storyText.textContent = newText;
+                storyImage.style.opacity = 1;
+                storyText.style.opacity = 1;
+            }, 300); // You can tweak this delay if you want
+        }
 
 
+
+    // Function to show the quiz modal
+    function startQuiz() {
+    isInQuiz = true;
+
+    // Pick the right quiz based on how far you are
+     // -1 because first 5 pages = quiz 0
+    let quizNumber = Math.floor(currentIndex / 5) - 1;
+    if (quizNumber >= quizQuestions.length) {
+        // prevent out of bounds
+        quizNumber = quizQuestions.length - 1; 
+    }
+
+    const quiz = quizQuestions[quizNumber];
+    document.getElementById('quizQuestion').textContent = quiz.question;
+    
+    const answerButtons = document.querySelectorAll('.quiz-answer');
+    answerButtons.forEach((button, index) => {
+        button.textContent = quiz.answers[index];
+    });
+
+    document.getElementById('quizModal').style.display = 'flex';
+}
+
+
+    // Check the answer and show result
+    function checkAnswer(answerIndex) {
+    const quiz = quizQuestions[currentQuizIndex];
+    const isCorrect = answerIndex === quiz.correctAnswer;
+    const resultText = isCorrect ? "Correct!" : "Incorrect. Try again.";
+    document.getElementById('quizResult').textContent = resultText;
+
+    if (isCorrect) {
+        // If the user answered correctly, close the quiz and allow forward movement
+        setTimeout(() => {  // Optional: small delay so they can see "Correct!" message
+            document.getElementById('quizModal').style.display = 'none';
+            isInQuiz = false;
+        }, 1000); // 1 second delay
+    }
+}
+
+
+    // Function to move to the next page after the quiz
+    function nextPageAfterQuiz() {
+        // Hide quiz modal
+        document.getElementById('quizModal').style.display = 'none';
+        
+        // Move to next quiz or reset after last one
+        if (currentQuizIndex < quizQuestions.length - 1) {
+            currentQuizIndex++;
+        } else {
+            // Restart the quiz or do something else
+            currentQuizIndex = 0; 
+        }
+        
+       
+         // Updates the story content
+        updateContent();
+        isInQuiz = false;
+    }
+
+ 
         // Initialize the content when the page loads
         updateContent();
     </script>
