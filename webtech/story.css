@@ -136,26 +136,29 @@ nav {
 }
 
 .fact-popup {
-    /* Enables precise positioning next to the fact zone */
     position: absolute;
-    /* White background for clarity */
-    background-color: #fff;
-    /* Thin dark border */
-    border: 1px solid #444;
-    /* Space inside the popup */
-    padding: 10px;
-    /* Rounded corners for a softer look */
-    border-radius: 8px;
-    /* Hidden by default until triggered */
+    background-color: #ffffcc; /* Light yellow to stand out */
+    border: 2px solid #ffcc00; /* Brighter gold border */
+    padding: 15px; /* More padding for breathing room */
+    border-radius: 10px;
     display: none;
-    /* Ensure it appears above all other content */
     z-index: 20;
-    /* Prevent it from stretching too wide */
-    max-width: 200px;
-    /* Subtle shadow for depth */
-    box-shadow: 0 2px 10px rgba(0,0,0,0.3);
-    /* Text color */
-    color:black;
+    max-width: 220px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.5); /* Bigger shadow for more depth */
+    color: black;
+    animation: popupFade 0.5s ease forwards; /* Animation when it appears */
+}
+
+/* Add this animation at the bottom of your CSS */
+@keyframes popupFade {
+    from {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
 }
 
 .progress-bar-container {
@@ -163,8 +166,8 @@ nav {
     width: 100%;
     /* making the progress bar only 10 pixels high*/
     height: 10px;
-    /* Setting the bar as green */
-    background-color: #00ff22;
+    /* Setting the bar as black to blend in with background */
+    background-color: #000000;
     /* Rounding the corners to give a softer look*/
     border-radius: 5px;
     /*if anything tries to overflow and go beyond the boundaries it gets cut off */
@@ -176,8 +179,59 @@ nav {
 .progress-bar {
     height: 100%;
     width: 0%;
-    /*setting the colour black to bled in with the background */
-    background-color: #000000; 
+    /*setting the colour to a dark cyan*/
+    background-color: #00797d; 
     /* transition for it to look like its building up to the line rather than to be just a block increase*/
     transition: width 0.3s ease-in-out;
 }
+
+.story-image, .story-text {
+    /*smooth transitions */
+    transition: opacity 0.5s ease-in-out;
+}
+.quiz-modal {
+    /* Hidden by default */
+    display: none; 
+    /* position is fixed and will never change*/
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* setting the background colour to black*/
+    background-color: rgba(0, 0, 0, 0.5);
+    /* alligning the content to displayed in the centre of the screen*/
+    justify-content: center;
+    align-items: center;
+}
+
+.quiz-content {
+    /* popup with a white background */
+    background: white;
+    padding: 20px;
+    /* rounded edges*/
+    border-radius: 8px;
+    /* allign the text to the centre */
+    text-align: center;
+    /*black text to not clash with the background */
+    color:#000000; 
+}
+
+.quiz-answer {
+    /*spacing between answers */
+    margin: 5px;
+    padding: 10px 20px;
+    /*to be cllicked  */
+    cursor: pointer;
+}
+
+.quiz-answer:hover {
+    /* to show the user they are hovering over that answer */
+    background-color: #a3a2a2;
+}
+
+#nextPageButton {
+    margin-top: 20px;
+}
+
+
