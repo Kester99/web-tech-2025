@@ -1,0 +1,256 @@
+/* css reset */
+* {
+    padding:0;
+    margin:0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* non-default font */
+
+@font-face {
+    font-family: 'SpecialElite';
+    src:url(fonts/SpecialElite.ttf) format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+h1 {
+    font-weight: bolder;
+    color: var(--color-5);
+    padding: 25px;
+}
+
+h3 {
+    font-weight: bold;
+    color: var(--color-4);
+    padding: 20px;
+}
+
+p {
+    color: var(--color-4);
+}
+
+
+
+body {
+    height: 100%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    font-family: 'SpecialElite', Arial, Helvetica, sans-serif;
+    font: 16px/1.5;
+    overflow-y: hidden;
+
+}
+
+
+/*shared bg settings*/
+
+.p1,.p2,.p3,.p4,.p5,.p6,.p7,.p8,.p9,.p10{
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: -1;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+
+}
+
+/*specific backgrounds*/
+
+.p1 {
+    background-image: url('images/futurecity.jpg');
+    max-width: 100%;
+}
+
+
+/*story content + inline image settings*/
+
+.story-container {
+    box-sizing: border-box;
+    position:relative;
+    width: 60%;
+    height: 100%;
+    margin: auto;
+    margin-top: 1%;
+    padding: 80px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #1f1b7999;
+    background-blend-mode: multiply;
+    border-radius: 20px;
+    -webkit-backdrop-filter: grayscale(100%) blur(2px);
+    backdrop-filter: grayscale(100%) blur(2px);
+    line-height: 200%;
+}
+
+.story-image-header {
+    width: 100%;
+    max-height: 400px;
+    object-fit: contain;
+    display: block;
+    margin: auto;
+    padding-bottom: 20px;
+  }
+
+
+  /*header settings*/
+.header {
+    display: block;
+    position: sticky;
+    top: 0px;
+    z-index: 1;
+    flex-direction: column;
+    width:100%;
+    text-align: center;
+    background-color: #1f1b7999;
+    background-blend-mode: multiply;
+    -webkit-backdrop-filter: grayscale(100%) blur(2px);
+    backdrop-filter: grayscale(100%) blur(2px);
+}
+
+/* popout navigation menu*/
+.nav { 
+    height: 100vh;
+    width: 0;
+    position: fixed; 
+    z-index: 2; 
+    top: 0;
+    left: 0;
+    background-color: var(--color-1);
+    overflow-x: hidden;
+    padding-top: 60px;
+    transition: 0.5s; 
+}
+
+.nav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 20px;
+    color: var(--color-5);
+    display: block;
+    transition: 0.3s;
+}
+
+.nav a:hover {
+    color: var(--color-4);
+}  
+
+.nav .close-nav {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+    transition: 0.3s;
+}
+
+.hamburger {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    cursor: pointer;
+    z-index: 3;
+}
+
+.bar1, .bar2, .bar3 {
+    width : 35px;
+    height: 5px;
+    background-color: var(--color-5);
+    margin: 6px 0;
+    transition: 0.4s;
+}
+
+.change .bar1 {
+    transform: rotate(-45deg) translate(-6px, 6px);
+}
+.change .bar2 {
+    opacity: 0;
+}   
+.change .bar3 {
+    transform: rotate(45deg) translate(-6px, -6px);
+}
+
+/* Main content */
+#main {
+    transition: margin-left 0.5s; /* Smooth transition for shifting */
+    position: relative; /* Ensure it doesn't overlap with the navbar */
+    z-index: 1; /* Keep it below the navbar */
+    min-height: 100vh;
+}
+
+
+.link, .link:link, .link:visited {
+    box-sizing: border-box;
+    color: var(--color-5);
+    background-color: var(--color-2);
+    text-decoration: none;
+    font-weight: bold;
+    
+    margin:auto;
+    margin-top: 30px;
+    padding: 10px 20px;
+    text-transform: uppercase;
+    border-radius: 15px;
+    width: 25%;
+    display: inline-flex;
+    justify-content: center;
+    
+}
+
+.link:hover, .link:active {
+    background-color: var(--color-2);
+    color: var(--color-5);
+    text-decoration:none;
+    box-shadow: 0px 0px 5px 3px var(--color-2);
+    
+}
+
+.glow {
+    -webkit-animation: glow 1s ease-in-out infinite alternate;
+    animation: glow 1s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+    0% {
+        text-shadow: 0 0 10px var(--color-5), 0 0 20px var(--color-5), 0 0 30px var(--color-3);
+    }
+    100% {
+        text-shadow: 0 0 20px var(--color-5), 0 0 30px var(--color-3), 0 0 40px var(--color-3);
+    }
+}
+
+
+/* colour palette */
+.color-1 {
+    color: #1f1b79;
+  }
+  .color-2 {
+    color: #5c2f92;
+  }
+  .color-3 {
+    color: #a03b5f;
+  }
+  .color-4 {
+    color: #f2a36e;
+  }
+  .color-5 {
+    color: #f8e5a0;
+  }
+  
+  /* color palette variables */
+  :root {
+    --color-1: #1f1b79;
+    --color-2: #5c2f92;
+    --color-3: #a03b5f;
+    --color-4: #f2a36e;
+    --color-5: #f8e5a0;
+  }
