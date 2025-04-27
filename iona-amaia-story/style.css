@@ -41,13 +41,13 @@ body {
 /* PAGE-SPECIFIC BACKGROUNDS          */
 /* All pages use the same background image */
 /* ----------------------------------- */
-.index    { background-image: url('green-leaf-framed-background.jpg'); }
-.chapter1 { background-image: url('green-leaf-framed-background.jpg'); }
-.chapter2 { background-image: url('green-leaf-framed-background.jpg'); }
-.chapter3 { background-image: url('green-leaf-framed-background.jpg'); }
-.chapter4 { background-image: url('green-leaf-framed-background.jpg'); }
-.ending1  { background-image: url('green-leaf-framed-background.jpg'); }
-.ending2  { background-image: url('green-leaf-framed-background.jpg'); }
+.index    { background-image: url('images/green-leaf-framed-background.jpg'); }
+.chapter1 { background-image: url('images/green-leaf-framed-background.jpg'); }
+.chapter2 { background-image: url('images/green-leaf-framed-background.jpg'); }
+.chapter3 { background-image: url('images/green-leaf-framed-background.jpg'); }
+.chapter4 { background-image: url('images/green-leaf-framed-background.jpg'); }
+.ending1  { background-image: url('images/green-leaf-framed-background.jpg'); }
+.ending2  { background-image: url('images/green-leaf-framed-background.jpg'); }
 
 /* ----------------------------------- */
 /* PAGE TITLE STYLING (HEADER H1)     */
